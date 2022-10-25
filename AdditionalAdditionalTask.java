@@ -17,7 +17,7 @@ public class AdditionalAdditionalTask {
         int first = scanner.nextInt();
         System.out.println("Введите второе число");
         int second = scanner.nextInt();
-        if ( first > second) {
+        if (first > second) {
             System.out.println("Первое число больше второго");
         } else {
             System.out.println("Второе число меньше первого");
@@ -31,9 +31,9 @@ public class AdditionalAdditionalTask {
         int second = scanner.nextInt();
         System.out.println("Введите третью сторону треугольника");
         int third = scanner.nextInt();
-        if ( first == second && second == third) {
+        if (first == second && second == third) {
             System.out.println("Треугольник равносторонний");
-        } else if ((first == second || first== third || second== third)) {
+        } else if ((first == second || first == third || second == third)) {
             System.out.println("Треугольник равнобедренный");
         } else {
             System.out.println("Треугольник разносторонний");
@@ -41,31 +41,31 @@ public class AdditionalAdditionalTask {
     }
 
     public static void conditionalStatements4() {
-        int positive = 0,negative = 0;
+        int positive = 0, negative = 0;
         System.out.println("Введите первое число");
         int first = scanner.nextInt();
-        if ( first > 0 ) {
+        if (first > 0) {
             positive++;
         } else {
             negative++;
         }
         System.out.println("Введите второе число");
         int second = scanner.nextInt();
-        if ( second > 0 ) {
+        if (second > 0) {
             positive++;
         } else {
             negative++;
         }
         System.out.println("Введите третье число");
         int third = scanner.nextInt();
-        if ( third > 0 ) {
+        if (third > 0) {
             positive++;
         } else {
             negative++;
         }
         System.out.println("Введите четвертое число");
         int four = scanner.nextInt();
-        if ( four > 0 ) {
+        if (four > 0) {
             positive++;
         } else {
             negative++;
@@ -80,7 +80,7 @@ public class AdditionalAdditionalTask {
         int second = scanner.nextInt();
         System.out.println("Введите третье число");
         int third = scanner.nextInt();
-        if ( first > second && first > third) {
+        if (first > second && first > third) {
             System.out.println("Наибольшее число: " + first);
         } else if (second > first && second > third) {
             System.out.println("Наибольшее число: " + second);
@@ -90,7 +90,7 @@ public class AdditionalAdditionalTask {
     }
 
     public static void conditionalStatements6() {
-        int max,min,result;
+        int max, min, result;
         System.out.println("Введите первое число");
         int first = scanner.nextInt();
         System.out.println("Введите второе число");
@@ -98,7 +98,7 @@ public class AdditionalAdditionalTask {
         System.out.println("Введите третье число");
         int third = scanner.nextInt();
 
-        if ( first > second && first > third) {
+        if (first > second && first > third) {
             System.out.println("Наибольшее число: " + first);
             max = first;
             min = Math.min(second, third);
@@ -173,7 +173,7 @@ public class AdditionalAdditionalTask {
 
     public static void loops1() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(i*4);
+            System.out.println(i * 4);
         }
     }
 
@@ -211,8 +211,8 @@ public class AdditionalAdditionalTask {
     }
 
     public static void arrays1() {
-        int pos=0,neg=0;
-        int[] array = {1,2,-3,4,-5,6,-7,7,8};
+        int pos = 0, neg = 0;
+        int[] array = {1, 2, -3, 4, -5, 6, -7, 7, 8};
         for (int j : array) {
             if (j < 0) {
                 neg++;
@@ -220,7 +220,7 @@ public class AdditionalAdditionalTask {
                 pos++;
             }
         }
-        System.out.println("Положительных чисел: " + pos + " Отрицательных чисел: " + neg );
+        System.out.println("Положительных чисел: " + pos + " Отрицательных чисел: " + neg);
     }
 
     public static void arrays2() {
@@ -236,19 +236,213 @@ public class AdditionalAdditionalTask {
     }
 
     public static void arrays3() {
+
         int result = 0;
         int[] array = {1, 2, -3, 4, -5, 6, -7, 7, 8};
-        for (int j : array) {
-            if (j % 2 == 0) {
-                result = result + j;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                result = result + array[i];
             }
             System.out.println(result);
         }
-
     }
 
+    public static void arrays4() {
 
+        int[] array = {1, 2, -3, 4, -5, 6, -7, 7, 8};
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        System.out.println(max);
+    }
+
+    public static void arrays5() {
+        //Дан массив с целыми числами. Вывести в консоль наиболее часто встречающееся. Если
+        // таких несколько, то вывести наибольшее из них, если повторяющихся нет, в
+        // ывести соответствующее сообщение.
+
+        int[] a = {1, 2, -3, 234, 6, 4, 3, 7, 8};
+
+        int n = 0;
+        int counter = 0;
+        int cmax = 0;
+
+
+        for (int i = 0; i < a.length; i++) {
+
+            for (int j = 0; j < a.length; j++) {
+                if (i == j) {
+
+                } else if (a[i] == a[j]) {
+                    counter++;
+                }
+            }
+
+            if (counter > cmax) {
+                cmax = counter;
+                if (a[i] > n ) {
+                    n = a[i];
+                }
+            }
+        }
+
+        if (cmax == 0) {
+            System.out.println("Совпадений нет");
+        }  else {
+            System.out.println("Нужное число: " + n);
+        }
+    }
+
+    public static void arrays6() {
+        //6. Дан двумерный массив 10х10 с целыми числами.
+        // Вывести в консоль все числа по диагонали от [0][0] до [10][10]
+        int[][] array = new int[10][10];
+//fill massive
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if ((i + j) % 2 == 0) {
+                    array[i][j] = 1;
+                } else {
+                    array[i][j] = 0;
+                }
+            }
+        }
+
+// print massive
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (j == 9) {
+                    System.out.println(array[i][j] + "");
+                } else {
+                    System.out.print(array[i][j] + " ");
+                }
+
+            }
+
+        }
+
+// task
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (i == j) {
+                    array[i][j] = 6;
+                    System.out.println(array[i][j]);
+                }
+            }
+
+        }
+// print massive
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (j == 9) {
+                    System.out.println(array[i][j] + "");
+                } else {
+                    System.out.print(array[i][j] + " ");
+                }
+
+            }
+        }
+    }
+
+            public static void arrays7() {
+                //Дан двумерный массив 10х10 с целыми числами.
+                // Вывести в консоль все числа по диагонали от [0][10] до [10][0]
+
+                int[][] arrays = new int[10][10];
+
+//fill massive
+
+                for (int i = 0; i < arrays.length; i++) {
+                    for (int j = 0; j < arrays[i].length; j++) {
+                        if ((i + j) % 2 == 0) {
+                            arrays[i][j] = 1;
+                        } else {
+                            arrays[i][j] = 0;
+                        }
+                    }
+                }
+
+// print massive
+
+                for (int[] array : arrays) {
+                    for (int j = 0; j < arrays.length; j++) {
+                        if (j == 9) {
+                            System.out.println(array[j] + "");
+                        } else {
+                            System.out.print(array[j] + " ");
+                        }
+
+                    }
+
+                }
+
+// task
+                for (int i = 0; i < arrays.length; i++) {
+                    for (int j = arrays[i].length - 1; j >= 0; j--) {
+                        if (i + j == 9) {
+                            arrays[i][j] = 6;
+                            System.out.println(arrays[i][j]);
+                        }
+                    }
+
+                }
+// print massive
+
+                for (int i = 0; i < arrays.length; i++) {
+                    for (int j = 0; j < arrays.length; j++) {
+                        if (j == 9) {
+                            System.out.println(arrays[i][j] + "");
+                        } else {
+                            System.out.print(arrays[i][j] + " ");
+                        }
+
+                    }
+
+                }
+
+
+            }
+    public static void arrays8() {
+        // Дан двумерный массив 5х5 с целыми числами. Посчитать суммы чисел в каждом столбце
+        // и вывести наибольшую из них
+        
+        int[][] array = new int[5][5];
+        int max = 0;
+
+//fill massive
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if ((i + j) % 2 == 0) {
+                    array[i][j] = 1;
+                } else if ((i + j) % 3 == 0) {
+                    array[i][j] = 3;
+                } else {
+                    array[i][j] = 0;
+                }
+            }
+        }
+//task 
+        
+        for (int i = 0; i < array.length; i++) {
+            int tmp = 0;
+            for (int j = 0; j < array[i].length; j++) {
+                tmp = tmp + array[i][j];
+                max = Math.max(max,tmp);
+            }
+        }
+        System.out.println(max);
+
+    }
 }
+
+
+
 
 
 
